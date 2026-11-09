@@ -9,7 +9,18 @@ How Pokapu is built.
 
 ## Status
 
-Pokapu is in its scaffolding stage. There's no application code yet, and no framework, package manager, runtime, or monorepo tooling has been chosen. Each of these choices should be recorded in [`decisions/`](decisions/) when it's made.
+Pokapu is in its scaffolding stage. The core stack has been chosen, but there's no application code yet:
+
+- [TypeScript on Node.js](decisions/261109-typescript-on-node-js.md)
+- [TanStack Start as the web framework](decisions/261109-tanstack-start-web-framework.md)
+- [PostgreSQL as the database](decisions/261109-postgresql-database.md)
+- [pnpm workspaces](decisions/261109-pnpm-workspaces.md)
+- [Drizzle ORM and SQL migrations](decisions/261109-drizzle-orm-and-sql-migrations.md)
+- [Oxlint and oxfmt for linting and formatting](decisions/261109-oxlint-and-oxfmt.md)
+- [Testing with Vitest and Playwright](decisions/261109-testing-with-vitest-and-playwright.md)
+- [GitHub Actions for CI](decisions/261109-github-actions-ci.md)
+
+Tooling hasn't been scaffolded yet. Releases and deployment are still undecided. Record each choice in [`decisions/`](decisions/) when it's made.
 
 ## Open decisions
 

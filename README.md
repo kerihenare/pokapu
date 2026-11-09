@@ -51,11 +51,13 @@ So far we've set out why Pokapu exists and the values that guide it, and made th
 - **Multi-tenancy:** one deployment of Pokapu can host many Organisations, each with its own isolated data.
 - **Plugins:** functionality can be added without changing the core, and plugins are enabled per Pokapu instance, shared by all its Organisations.
 
-Next, we'll make the engineering decisions that follow from these, including the technology stack. Progress is tracked in [GitHub Issues](https://github.com/kerihenare/pokapu/issues).
+We've also chosen the technology stack: TypeScript on Node.js, TanStack Start (React), PostgreSQL, and pnpm workspaces. See [`04-engineering/decisions/`](04-engineering/decisions/).
+
+Next, we'll design how Organisations' data is isolated and how plugins work, then scaffold the first app. Progress is tracked in [GitHub Issues](https://github.com/kerihenare/pokapu/issues).
 
 ## Getting Started
 
-There's nothing to install yet. Installation, development environment, and self-hosting instructions will be added once the technology stack has been chosen.
+There's nothing to run yet. The stack has been chosen, and [`04-engineering/source/README.md`](04-engineering/source/README.md) explains how to set up the toolchain. Self-hosting instructions will follow once there's an app.
 
 In the meantime, the repository itself is a good place to start. Its numbered directories are the project's living documentation:
 
