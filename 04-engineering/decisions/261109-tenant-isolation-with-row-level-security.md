@@ -90,7 +90,7 @@ Some data isn't owned by a single Organisation. That includes the `organisations
 
 ## Open questions
 
-- **Product:** what an Organisation can see of a person's instance-level account (for example name, email and pronouns) and how a person controls that. This shapes which personal data is instance-level and which is per Organisation.
+- **Product:** what an Organisation can see of a person's instance-level account (for example name, email and pronouns) and how a person controls that. This shapes which personal data is instance-level and which is per Organisation. Proposed answer: [Personal data and privacy](../../02-product/decisions/261109-personal-data-and-privacy.md).
 - **Product and architecture:** instance operators' powers, such as creating and deleting Organisations or supporting an Organisation. These need a separate, audited path. It could use the owner role or a dedicated maintenance role, but must never be the application role's normal request handling.
 - **Lead engineer:** the scoped transaction helper's API, how unscoped access is restricted (module boundaries, a lint rule or both), and the exact form of the CI check.
-- **Architecture:** the plugin architecture must explain how plugins are kept from bypassing isolation, given that RLS alone doesn't stop hostile in-process code.
+- **Architecture:** the plugin architecture must explain how plugins are kept from bypassing isolation, given that RLS alone doesn't stop hostile in-process code. Proposed answer: [Plugin trust model](261109-plugin-trust-model.md).

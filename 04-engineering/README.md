@@ -26,9 +26,16 @@ Formatting, linting, type-checking, tests and CI are set up in [`source/`](sourc
 
 ## Open decisions
 
-One accepted product decision still needs an engineering counterpart:
+Drafted as Proposed records, waiting to be accepted or changed:
 
-- **Plugin architecture**: extension points, API surface, packaging, distribution, sandboxing and trust, versioning, and whether plugins run in-process. See [Plugin system](../02-product/decisions/261109-plugin-system.md).
+- [Plugin trust model](decisions/261109-plugin-trust-model.md): how far plugins are trusted, and how they're kept from bypassing Organisation isolation.
+- [Authentication and identity](decisions/261109-authentication-and-identity.md): how people sign in, how sessions work, and how the active Organisation is chosen per request. Depends on [Personal data and privacy](../02-product/decisions/261109-personal-data-and-privacy.md).
+
+Not yet drafted:
+
+- **Plugin architecture**: extension points, packaging, distribution and versioning, building on the trust model. See [Plugin system](../02-product/decisions/261109-plugin-system.md).
+- **Internationalisation approach**: the library and technical approach, once [Internationalisation](../02-product/decisions/261109-internationalisation.md) is accepted.
+- **Releases and deployment**, including the self-hosting setup.
 
 Every feature must be Organisation-scoped from the start. A leak of data across Organisations is a serious defect.
 
