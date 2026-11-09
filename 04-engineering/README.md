@@ -20,13 +20,14 @@ Pokapu is in its scaffolding stage. The core stack has been chosen:
 - [Testing with Vitest and Playwright](decisions/261109-testing-with-vitest-and-playwright.md)
 - [GitHub Actions for CI](decisions/261109-github-actions-ci.md)
 
-Formatting, linting, type-checking, tests and CI are set up in [`source/`](source/), with a placeholder web app. Database tooling waits on the tenant isolation decision. Releases and deployment are still undecided. Record each choice in [`decisions/`](decisions/) when it's made.
+Tenant isolation uses [a shared schema with row-level security](decisions/261109-tenant-isolation-with-row-level-security.md).
+
+Formatting, linting, type-checking, tests and CI are set up in [`source/`](source/), with a placeholder web app. Database tooling is next, now that tenant isolation is decided. Releases and deployment are still undecided. Record each choice in [`decisions/`](decisions/) when it's made.
 
 ## Open decisions
 
-Two accepted product decisions need engineering counterparts:
+One accepted product decision still needs an engineering counterpart:
 
-- **Tenant isolation**: how Organisations' data is kept apart. Proposed: [a shared schema with row-level security](decisions/261109-tenant-isolation-with-row-level-security.md), awaiting acceptance. See [Multi-tenancy with Organisations](../02-product/decisions/261109-multi-tenancy-with-organisations.md).
 - **Plugin architecture**: extension points, API surface, packaging, distribution, sandboxing and trust, versioning, and whether plugins run in-process. See [Plugin system](../02-product/decisions/261109-plugin-system.md).
 
 Every feature must be Organisation-scoped from the start. A leak of data across Organisations is a serious defect.

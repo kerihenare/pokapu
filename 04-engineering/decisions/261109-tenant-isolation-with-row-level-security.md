@@ -1,7 +1,7 @@
 # Tenant isolation with a shared schema and row-level security
 
 - **Date:** 2026-11-09
-- **Status:** Proposed
+- **Status:** Accepted
 
 ## Context
 
@@ -86,7 +86,7 @@ Some data isn't owned by a single Organisation. That includes the `organisations
 - Operators must run Pokapu with two database roles and never as a superuser. The self-hosting setup (for example Docker Compose) must create them.
 - Exporting or deleting a single Organisation's data works through `organisation_id`. Moving one Organisation to its own instance would need an export and import tool, which isn't designed yet.
 - If a single Organisation ever outgrows a shared instance, the answer is a dedicated instance, not a different isolation model.
-- Database tooling (Drizzle, Testcontainers, the migration check and the PostgreSQL 17/18 matrix) can now be set up once this record is accepted.
+- Database tooling (Drizzle, Testcontainers, the migration check and the PostgreSQL 17/18 matrix) can now be set up.
 
 ## Open questions
 
