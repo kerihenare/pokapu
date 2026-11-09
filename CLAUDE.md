@@ -21,18 +21,25 @@ The top-level directories are numbered by discipline and act as the project's li
 Two accepted product decisions shape everything engineering builds. Their engineering counterparts haven't been recorded yet.
 
 - **Multi-tenancy** (`02-product/decisions/261109-multi-tenancy-with-organisations.md`): one deployment hosts many tenants, called **Organisations**. Data is isolated per Organisation by default, and a person can belong to several. Every feature must be Organisation-scoped from the start; a cross-Organisation leak is a serious defect. The isolation strategy (shared schema, schema per tenant, etc.) is an open engineering decision.
-- **Plugins** (`02-product/decisions/261109-plugin-system.md`): functionality can be added without changing the core. Plugins are enabled and configured per Organisation, must respect Organisation isolation, and can be built by third parties. The plugin architecture (extension points, packaging, sandboxing, in-process or not) is an open engineering decision.
+- **Plugins** (`02-product/decisions/261109-plugin-system.md`): functionality can be added without changing the core. Plugins are installed, enabled and configured per Pokapu instance and shared by all Organisations on it; there is no per-Organisation plugin configuration. They must respect Organisation isolation and can be built by third parties. The plugin architecture (extension points, packaging, sandboxing, in-process or not) is an open engineering decision.
 
 "Organisation" is overloaded: it means a tenant, and also Pokapu itself (`01-organisation/`). Be explicit about which one you mean.
 
 ## Claude configuration
 
-- `.claude/agents/` defines role-based subagents: `architect`, `designer`, `engineer`, `lead-engineer`, `product-manager`, `project-manager`. Right now each file contains only a `name` in its frontmatter, with no description, tools, or prompt. Flesh them out before relying on them for delegation.
+- `.claude/agents/` defines role-based subagents. Each reads the purpose, values and relevant decision records first, follows the conventions below, and ends with a report:
+  - `architect`: system-level design (tenant isolation, plugin architecture, data model) and engineering decision records. No application code.
+  - `designer`: flows, wireframes, brand, style guide, accessibility and design-system direction in `03-design/`.
+  - `engineer`: implements scoped work in `04-engineering/source/`; stops and reports if a needed decision is unrecorded.
+  - `lead-engineer`: stack and tooling choices, engineering standards, code review; keeps this file and the source README current.
+  - `product-manager`: problems, requirements, acceptance criteria and product decision records in `02-product/`.
+  - `project-manager`: GitHub issues, sequencing, dependencies, triage labels and status. No product or technical decisions.
 - `.claude/skills/` exists but is empty.
 
 ## Conventions
 
 - Every new decision MUST be recorded in the relevant discipline's `decisions/` directory, never left implicit. Name the file `YYMMDD-slugified-title.md`, using the date the decision was made (e.g. `261109-recording-decisions.md`). Follow that record's structure: an H1 title, `**Date:**` (YYYY-MM-DD) and `**Status:**` bullets, then `## Context`, `## Decision`, and `## Consequences` sections.
+- A record's status is `Proposed`, `Accepted`, `Rejected`, or `Superseded` (with a link to the replacing record, e.g. `Superseded by 270115-new-title.md`). You can edit a record in place to amend or clarify it. When a decision is reversed or replaced outright, write a new record and mark the old one `Superseded`.
 - Use British/NZ English spelling in docs ("organisation", "licence"), matching the existing content.
 - Each directory's `README.md` describes its contents and current status. Keep them up to date as decisions are made, especially the root `README.md`'s Project Status and Getting Started sections and `04-engineering/source/README.md` once tooling exists.
 

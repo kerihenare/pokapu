@@ -9,7 +9,7 @@ Product decisions are recorded in [`decisions/`](decisions/). Each record explai
 Accepted so far:
 
 - [Multi-tenancy with Organisations](decisions/261109-multi-tenancy-with-organisations.md): one deployment hosts many Organisations, each with its own isolated data.
-- [Plugin system](decisions/261109-plugin-system.md): functionality can be added without changing the core, and plugins are enabled per Organisation.
+- [Plugin system](decisions/261109-plugin-system.md): functionality can be added without changing the core, and plugins are enabled per Pokapu instance, shared by all its Organisations.
 
 ## Recording a decision
 

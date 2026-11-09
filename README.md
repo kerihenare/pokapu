@@ -49,7 +49,7 @@ Pokapu is in its early planning stage. There's no application code yet.
 So far we've set out why Pokapu exists and the values that guide it, and made the first product decisions:
 
 - **Multi-tenancy:** one deployment of Pokapu can host many Organisations, each with its own isolated data.
-- **Plugins:** functionality can be added without changing the core, and each Organisation chooses its own plugins.
+- **Plugins:** functionality can be added without changing the core, and plugins are enabled per Pokapu instance, shared by all its Organisations.
 
 Next, we'll make the engineering decisions that follow from these, including the technology stack. Progress is tracked in [GitHub Issues](https://github.com/kerihenare/pokapu/issues).
 
