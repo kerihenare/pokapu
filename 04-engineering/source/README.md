@@ -65,6 +65,6 @@ Install the Oxc extension for your editor ([VS Code](https://marketplace.visuals
 
 Formatting, linting, type-checking, unit and component tests, end-to-end and accessibility tests, and CI are all set up. The web app is a placeholder page.
 
-Database tooling isn't set up yet: Drizzle, Testcontainers, the CI migration check and the PostgreSQL 17 and 18 test matrix. It's waiting on the tenant isolation decision, which will shape the schema and the shared isolation test helpers.
+Database tooling isn't set up yet: Drizzle, Testcontainers, the CI migration check and the PostgreSQL 17 and 18 test matrix. It follows [tenant isolation with a shared schema and row-level security](../decisions/261109-tenant-isolation-with-row-level-security.md), which sets the schema rules, database roles and shared isolation test helpers.
 
-These decisions are still open: how Organisation isolation and plugins are built, and how releases and deployment work.
+These decisions are still open: how plugins are built, and how releases and deployment work.
