@@ -1,0 +1,25 @@
+name: Idea or improvement
+description: Suggest something Pokapu could do, or do better.
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing an idea. Describing the problem matters more than describing a solution, especially if you've helped run a volunteer-led event.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Who runs into it, when, and what do they do about it today?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help?
+      description: Your idea for solving it. Rough is fine.
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else?
+      description: The kind of event or organisation this comes from, links, screenshots, or how other tools handle it.

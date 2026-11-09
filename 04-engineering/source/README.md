@@ -47,6 +47,7 @@ Docker (or a compatible runtime) will be needed for database tests once they exi
 | `pnpm build`            | Builds every package that has a `build` script.                               |
 | `pnpm test:e2e`         | Builds, then runs Playwright in Chromium, Firefox and WebKit with axe checks. |
 | `pnpm browsers:install` | Downloads the Playwright browsers.                                            |
+| `pnpm audit`            | Fails on dependencies with high or critical security advisories.              |
 
 To work on the web app, run `pnpm --filter @pokapu/web dev` and open <http://localhost:3000>. To run a production build, run `pnpm build`, then `pnpm --filter @pokapu/web start`.
 

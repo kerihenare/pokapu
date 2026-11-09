@@ -5,6 +5,7 @@
   "description": "Pokapu source workspace.",
   "type": "module",
   "scripts": {
+    "audit": "pnpm audit --audit-level high",
     "browsers:install": "playwright install",
     "build": "pnpm --recursive --if-present build",
     "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test",

@@ -19,6 +19,7 @@ Pokapu is in its scaffolding stage. The core stack has been chosen:
 - [Oxlint and oxfmt for linting and formatting](decisions/261109-oxlint-and-oxfmt.md)
 - [Testing with Vitest and Playwright](decisions/261109-testing-with-vitest-and-playwright.md)
 - [GitHub Actions for CI](decisions/261109-github-actions-ci.md)
+- [Dependency updates with Dependabot](decisions/261109-dependency-updates-with-dependabot.md)
 
 Tenant isolation uses [a shared schema with row-level security](decisions/261109-tenant-isolation-with-row-level-security.md).
 
