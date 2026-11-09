@@ -44,12 +44,31 @@ As the project develops, we'll document how to contribute and participate in its
 
 ## Project Status
 
-[Add current development status, milestones, and links to the roadmap.]
+Pokapu is in its early planning stage. There's no application code yet.
+
+So far we've set out why Pokapu exists and the values that guide it, and made the first product decisions:
+
+- **Multi-tenancy:** one deployment of Pokapu can host many Organisations, each with its own isolated data.
+- **Plugins:** functionality can be added without changing the core, and each Organisation chooses its own plugins.
+
+Next, we'll make the engineering decisions that follow from these, including the technology stack. Progress is tracked in [GitHub Issues](https://github.com/kerihenare/pokapu/issues).
 
 ## Getting Started
 
-[Add installation, development environment, and self-hosting instructions when available.]
+There's nothing to install yet. Installation, development environment, and self-hosting instructions will be added once the technology stack has been chosen.
+
+In the meantime, the repository itself is a good place to start. Its numbered directories are the project's living documentation:
+
+| Directory | Contents |
+| --- | --- |
+| [`01-organisation/`](01-organisation/) | Why Pokapu exists, and its values |
+| [`02-product/`](02-product/) | Product decisions and requirements |
+| [`03-design/`](03-design/) | Brand, style, wireframes, and design decisions |
+| [`04-engineering/`](04-engineering/) | Engineering decisions and source code |
+| [`99-system/`](99-system/) | How the repository itself is run |
+
+Every significant decision is recorded in the relevant `decisions/` directory. See [Recording decisions](99-system/decisions/261109-recording-decisions.md).
 
 ## Licence
 
-[Add the chosen open-source licence before accepting external code contributions.]
+Pokapu is licensed under the [Apache License 2.0](LICENSE.md).

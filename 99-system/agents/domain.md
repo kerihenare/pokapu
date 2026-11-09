@@ -30,11 +30,7 @@ If any of these don't exist or are empty, **proceed silently**. Don't flag their
 
 ## Recording decisions
 
-Where a skill says "write an ADR", write a decision record instead, in the relevant discipline's `decisions/` folder:
-
-- Filename `YYMMDD-slugified-title.md`, dated the day the decision was made (no sequential numbering).
-- Structure as in `99-system/decisions/261109-recording-decisions.md`: H1 title, `**Date:**` (YYYY-MM-DD) and `**Status:**` bullets, then `## Context`, `## Decision`, `## Consequences`.
-- British/NZ English spelling.
+Where a skill says "write an ADR", write a decision record instead, in the relevant discipline's `decisions/` folder. Follow the filename, structure, and spelling rules in the **Conventions** section of the root `CLAUDE.md`.
 
 ## Use the glossary's vocabulary
 

@@ -4,16 +4,26 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project status
 
-Pokapu is an open-source platform (Apache 2.0, see `LICENSE.md`) to help volunteers organise and deliver events, with a focus on Burning Man regional burns. The repo is in its **pre-code scaffolding stage**: there is no application code, build, lint, or test tooling yet. The only manifest is `04-engineering/source/package.json` (`@pokapu/source`, private, ESM via `"type": "module"`, no scripts or dependencies). No framework, package manager, or runtime version has been chosen or recorded. The root `.gitignore` is the standard Node template, but that isn't a recorded decision. Don't assume frameworks or commands. Check the manifest first, and update this file once tooling exists.
+Pokapu is an open-source platform (Apache 2.0, see `LICENSE.md`) to help volunteers organise and deliver events, with a focus on Burning Man regional burns. The repo is in its **pre-code scaffolding stage**: there is no application code, build, lint, or test tooling yet. `04-engineering/source/package.json` (`@pokapu/source`, private, ESM via `"type": "module"`) has no scripts or dependencies. Source is split into `apps/` and `libs/`; the only package so far is `libs/design-system` (`@pokapu/design-system`, also an empty ESM manifest). The root manifest declares no workspaces, so how packages are linked is still undecided. No framework, package manager, or runtime version has been chosen or recorded. The root `.gitignore` is the standard Node template, but that isn't a recorded decision. Don't assume frameworks or commands. Check the manifest first, and update this file once tooling exists.
 
 ## Repository layout
 
 The top-level directories are numbered by discipline and act as the project's living documentation:
 
 - `01-organisation/`: why Pokapu exists (`purpose.md`) and its values (`values.md`, an interpretation of the 10 Principles of Burning Man). Product, design, and engineering decisions should be consistent with these.
-- `02-product/decisions/`, `03-design/decisions/`, `04-engineering/decisions/`: decision records for each discipline. They're empty for now (`.gitkeep` only). Record significant decisions here, in the relevant discipline's folder, rather than leaving them implicit in code. Stack choices, such as a framework, package manager, or monorepo tooling, belong in `04-engineering/decisions/`.
+- `02-product/decisions/`, `03-design/decisions/`, `04-engineering/decisions/`: decision records for each discipline. Product has two accepted records (see below); design and engineering are still empty (`.gitkeep` only). Record significant decisions here, in the relevant discipline's folder, rather than leaving them implicit in code. Stack choices, such as a framework, package manager, or monorepo tooling, belong in `04-engineering/decisions/`.
 - `04-engineering/source/`: where application source code lives. Run package commands from this directory, not from the repo root.
+- `03-design/brand-guidelines/`, `03-design/style-guide/`, and `03-design/wireframes/`: placeholders for design guidance. Each has a `README.md` describing its intended scope, but no content has been decided yet. `libs/design-system` is the code counterpart.
 - `99-system/`: tools, templates, and documentation for running the repository itself. Its `decisions/` folder holds records about how the project is run and documented, such as `261109-recording-decisions.md`.
+
+## Product constraints on architecture
+
+Two accepted product decisions shape everything engineering builds. Their engineering counterparts haven't been recorded yet.
+
+- **Multi-tenancy** (`02-product/decisions/261109-multi-tenancy-with-organisations.md`): one deployment hosts many tenants, called **Organisations**. Data is isolated per Organisation by default, and a person can belong to several. Every feature must be Organisation-scoped from the start; a cross-Organisation leak is a serious defect. The isolation strategy (shared schema, schema per tenant, etc.) is an open engineering decision.
+- **Plugins** (`02-product/decisions/261109-plugin-system.md`): functionality can be added without changing the core. Plugins are enabled and configured per Organisation, must respect Organisation isolation, and can be built by third parties. The plugin architecture (extension points, packaging, sandboxing, in-process or not) is an open engineering decision.
+
+"Organisation" is overloaded: it means a tenant, and also Pokapu itself (`01-organisation/`). Be explicit about which one you mean.
 
 ## Claude configuration
 
@@ -24,7 +34,7 @@ The top-level directories are numbered by discipline and act as the project's li
 
 - Every new decision MUST be recorded in the relevant discipline's `decisions/` directory, never left implicit. Name the file `YYMMDD-slugified-title.md`, using the date the decision was made (e.g. `261109-recording-decisions.md`). Follow that record's structure: an H1 title, `**Date:**` (YYYY-MM-DD) and `**Status:**` bullets, then `## Context`, `## Decision`, and `## Consequences` sections.
 - Use British/NZ English spelling in docs ("organisation", "licence"), matching the existing content.
-- `README.md` still has placeholder sections (Project Status, Getting Started, Licence). The Licence placeholder is out of date: `LICENSE.md` is already Apache 2.0.
+- Each directory's `README.md` describes its contents and current status. Keep them up to date as decisions are made, especially the root `README.md`'s Project Status and Getting Started sections and `04-engineering/source/README.md` once tooling exists.
 
 ## Agent skills
 
