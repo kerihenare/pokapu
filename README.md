@@ -44,7 +44,7 @@ As the project develops, we'll document how to contribute and participate in its
 
 ## Project Status
 
-Pokapu is in its early planning stage. There's no application code yet.
+Pokapu is in its early planning stage. The development tooling is in place, but there are no features yet.
 
 So far we've set out why Pokapu exists and the values that guide it, and made the first product decisions:
 
@@ -53,11 +53,11 @@ So far we've set out why Pokapu exists and the values that guide it, and made th
 
 We've also chosen the technology stack: TypeScript on Node.js, TanStack Start (React), PostgreSQL, and pnpm workspaces. See [`04-engineering/decisions/`](04-engineering/decisions/).
 
-Next, we'll design how Organisations' data is isolated and how plugins work, then scaffold the first app. Progress is tracked in [GitHub Issues](https://github.com/kerihenare/pokapu/issues).
+Formatting, linting, tests and CI are set up, with a placeholder web app. Next, we'll decide what the first release does, and design how Organisations' data is isolated and how plugins work. Progress is tracked in [GitHub Issues](https://github.com/kerihenare/pokapu/issues).
 
 ## Getting Started
 
-There's nothing to run yet. The stack has been chosen, and [`04-engineering/source/README.md`](04-engineering/source/README.md) explains how to set up the toolchain. Self-hosting instructions will follow once there's an app.
+There are no features to use yet, but developers can run the placeholder web app and the checks. [`04-engineering/source/README.md`](04-engineering/source/README.md) explains how to set up the toolchain. Self-hosting instructions will follow once there's an app.
 
 In the meantime, the repository itself is a good place to start. Its numbered directories are the project's living documentation:
 

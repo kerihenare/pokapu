@@ -9,7 +9,7 @@ How Pokapu is built.
 
 ## Status
 
-Pokapu is in its scaffolding stage. The core stack has been chosen, but there's no application code yet:
+Pokapu is in its scaffolding stage. The core stack has been chosen:
 
 - [TypeScript on Node.js](decisions/261109-typescript-on-node-js.md)
 - [TanStack Start as the web framework](decisions/261109-tanstack-start-web-framework.md)
@@ -20,7 +20,7 @@ Pokapu is in its scaffolding stage. The core stack has been chosen, but there's 
 - [Testing with Vitest and Playwright](decisions/261109-testing-with-vitest-and-playwright.md)
 - [GitHub Actions for CI](decisions/261109-github-actions-ci.md)
 
-Tooling hasn't been scaffolded yet. Releases and deployment are still undecided. Record each choice in [`decisions/`](decisions/) when it's made.
+Formatting, linting, type-checking, tests and CI are set up in [`source/`](source/), with a placeholder web app. Database tooling waits on the tenant isolation decision. Releases and deployment are still undecided. Record each choice in [`decisions/`](decisions/) when it's made.
 
 ## Open decisions
 
