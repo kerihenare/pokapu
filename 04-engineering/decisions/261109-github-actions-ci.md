@@ -19,11 +19,13 @@ Pokapu uses **GitHub Actions** for CI.
 - Workflows run on every pull request and on every push to `main`.
 - CI must pass before a pull request is merged. These checks are required:
   - install with a frozen lockfile (`pnpm install --frozen-lockfile`);
+  - audit dependencies for high or critical advisories (`pnpm audit`, see `261109-dependency-updates-with-dependabot.md`);
   - check formatting with oxfmt and lint with Oxlint (type-aware);
   - type-check with TypeScript;
   - run Vitest unit and integration tests, with the database tests repeated against each supported PostgreSQL major version, currently 17 and 18;
   - check migrations: the committed migrations apply cleanly to an empty database, and the schema has no changes waiting to be turned into a migration;
   - build the app and run Playwright end-to-end and accessibility tests against that build.
+- A repository ruleset on `main` enforces this. Changes reach `main` only through pull requests, the required checks (the `check` and `e2e` jobs) must pass, and force pushes and branch deletion are blocked. No approving review is required while Pokapu has a single maintainer. Add one once there are more.
 - The Node.js version comes from `04-engineering/source/.node-version`, and the pnpm version from `packageManager`, so CI matches local development.
 - Workflows are hardened against supply-chain attacks:
   - third-party actions are pinned to a full commit SHA;

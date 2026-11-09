@@ -40,20 +40,20 @@ Pokapu is a community-driven project, and contributions of all kinds are welcome
 
 You don't need to be a developer to contribute. We welcome ideas, feedback, documentation, testing, design, and code.
 
-As the project develops, we'll document how to contribute and participate in its direction.
+See [Contributing](CONTRIBUTING.md) for how to get involved, and our [Code of Conduct](CODE_OF_CONDUCT.md). Please report security vulnerabilities privately, as described in [SECURITY.md](SECURITY.md).
 
 ## Project Status
 
-Pokapu is in its early planning stage. The development tooling is in place, but there are no features yet.
+Pokapu is in its scaffolding stage. The development tooling is in place, but there are no features yet.
 
 So far we've set out why Pokapu exists and the values that guide it, and made the first product decisions:
 
 - **Multi-tenancy:** one deployment of Pokapu can host many Organisations, each with its own isolated data.
 - **Plugins:** functionality can be added without changing the core, and plugins are enabled per Pokapu instance, shared by all its Organisations.
 
-We've also chosen the technology stack: TypeScript on Node.js, TanStack Start (React), PostgreSQL, and pnpm workspaces. See [`04-engineering/decisions/`](04-engineering/decisions/).
+We've also chosen the technology stack: TypeScript on Node.js, TanStack Start (React), PostgreSQL, and pnpm workspaces. See [`04-engineering/decisions/`](04-engineering/decisions/). Organisations' data is isolated with [a shared schema and PostgreSQL row-level security](04-engineering/decisions/261109-tenant-isolation-with-row-level-security.md).
 
-Formatting, linting, tests and CI are set up, with a placeholder web app. Next, we'll decide what the first release does, and design how Organisations' data is isolated and how plugins work. Progress is tracked in [GitHub Issues](https://github.com/kerihenare/pokapu/issues).
+Formatting, linting, tests and CI are set up, with a placeholder web app. Next, we'll set up the database tooling, decide what the first release does, and design how plugins work. Progress is tracked in [GitHub Issues](https://github.com/kerihenare/pokapu/issues).
 
 ## Getting Started
 

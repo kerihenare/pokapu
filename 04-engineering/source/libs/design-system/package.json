@@ -2,7 +2,7 @@
   "name": "@pokapu/design-system",
   "version": "0.0.1",
   "private": true,
-  "description": "",
+  "description": "Pokapu's shared UI components and design tokens.",
   "type": "module",
   "scripts": {}
 }
