@@ -1,0 +1,16 @@
+{
+  "name": "@pokapu/web-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "description": "End-to-end and accessibility tests for @pokapu/web, run against its production build.",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "1.65.0",
+    "@pokapu/web": "workspace:*"
+  }
+}

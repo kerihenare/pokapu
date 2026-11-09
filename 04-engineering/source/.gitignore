@@ -1,0 +1,5 @@
+# Playwright and Vitest Browser Mode output
+__screenshots__/
+blob-report/
+playwright-report/
+test-results/

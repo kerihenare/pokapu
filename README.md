@@ -44,12 +44,33 @@ As the project develops, we'll document how to contribute and participate in its
 
 ## Project Status
 
-[Add current development status, milestones, and links to the roadmap.]
+Pokapu is in its early planning stage. The development tooling is in place, but there are no features yet.
+
+So far we've set out why Pokapu exists and the values that guide it, and made the first product decisions:
+
+- **Multi-tenancy:** one deployment of Pokapu can host many Organisations, each with its own isolated data.
+- **Plugins:** functionality can be added without changing the core, and plugins are enabled per Pokapu instance, shared by all its Organisations.
+
+We've also chosen the technology stack: TypeScript on Node.js, TanStack Start (React), PostgreSQL, and pnpm workspaces. See [`04-engineering/decisions/`](04-engineering/decisions/).
+
+Formatting, linting, tests and CI are set up, with a placeholder web app. Next, we'll decide what the first release does, and design how Organisations' data is isolated and how plugins work. Progress is tracked in [GitHub Issues](https://github.com/kerihenare/pokapu/issues).
 
 ## Getting Started
 
-[Add installation, development environment, and self-hosting instructions when available.]
+There are no features to use yet, but developers can run the placeholder web app and the checks. [`04-engineering/source/README.md`](04-engineering/source/README.md) explains how to set up the toolchain. Self-hosting instructions will follow once there's an app.
+
+In the meantime, the repository itself is a good place to start. Its numbered directories are the project's living documentation:
+
+| Directory | Contents |
+| --- | --- |
+| [`01-organisation/`](01-organisation/) | Why Pokapu exists, and its values |
+| [`02-product/`](02-product/) | Product decisions and requirements |
+| [`03-design/`](03-design/) | Brand, style, wireframes, and design decisions |
+| [`04-engineering/`](04-engineering/) | Engineering decisions and source code |
+| [`99-system/`](99-system/) | How the repository itself is run |
+
+Every significant decision is recorded in the relevant `decisions/` directory. See [Recording decisions](99-system/decisions/261109-recording-decisions.md).
 
 ## Licence
 
-[Add the chosen open-source licence before accepting external code contributions.]
+Pokapu is licensed under the [Apache License 2.0](LICENSE.md).
